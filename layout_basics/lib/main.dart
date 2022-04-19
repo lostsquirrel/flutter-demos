@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:layout_basics/main_axis_size_demo.dart';
+
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,18 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Layout Basics"),
-        ),
-        body: const Center(
-          child: RowTest(),
-        ),
-      ),
+      routes: {
+        Home.routeName: (context) => Home(),
+        MainAxisSizeDemo.routeName: (context) => MainAxisSizeDemo(),
+      },
     );
   }
 }
@@ -35,7 +30,6 @@ class RowTest extends StatefulWidget {
 }
 
 class _RowTestState extends State<RowTest> {
-  final _sizes = [MainAxisSize.max, MainAxisSize.min];
   final _aligns = [
     MainAxisAlignment.start,
     MainAxisAlignment.end,
@@ -44,7 +38,7 @@ class _RowTestState extends State<RowTest> {
     MainAxisAlignment.spaceEvenly,
     MainAxisAlignment.spaceAround
   ];
-  var _sizeType = MainAxisSize.max;
+
   var _alignment = MainAxisAlignment.start;
   @override
   Widget build(BuildContext context) {
@@ -52,21 +46,7 @@ class _RowTestState extends State<RowTest> {
       mainAxisSize: MainAxisSize.min,
       children: [
         // const Text("MainAxisSize"),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ..._sizes.map((e) {
-              return TextButton(
-                child: Text(e.toString()),
-                onPressed: () {
-                  setState(() {
-                    _sizeType = e;
-                  });
-                },
-              );
-            }).toList(),
-          ],
-        ),
+
         Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -85,7 +65,6 @@ class _RowTestState extends State<RowTest> {
           ),
         ),
         Row(
-          mainAxisSize: _sizeType,
           mainAxisAlignment: _alignment,
           children: [1, 2, 3].map((e) => const BlueBox()).toList(),
         ),
