@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:layout_basics/main_axis_alignment_demo.dart';
 
 import 'cross_axis_alignment_demo.dart';
+import 'flexible_demo.dart';
 import 'main_axis_size_demo.dart';
 
 class RouteItem {
@@ -21,6 +22,7 @@ class Home extends StatelessWidget {
         MainAxisAlignmentDemo.displayName, MainAxisAlignmentDemo.routeName),
     RouteItem(
         CrossAxisAlignmentDemo.displayName, CrossAxisAlignmentDemo.routeName),
+    RouteItem(FlexibleDemo.displayName, FlexibleDemo.routeName),
   ];
 
   List<TextButton> _buildRouters(BuildContext context) {

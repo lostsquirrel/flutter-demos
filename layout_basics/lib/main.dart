@@ -3,6 +3,7 @@ import 'package:layout_basics/main_axis_alignment_demo.dart';
 import 'package:layout_basics/main_axis_size_demo.dart';
 
 import 'cross_axis_alignment_demo.dart';
+import 'flexible_demo.dart';
 import 'home.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
             const MainAxisAlignmentDemo(),
         CrossAxisAlignmentDemo.routeName: (context) =>
             const CrossAxisAlignmentDemo(),
+        FlexibleDemo.routeName: (context) => const FlexibleDemo()
       },
     );
   }
