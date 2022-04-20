@@ -11,35 +11,35 @@ class MainAxisSizeDemo extends StatefulWidget {
 }
 
 class _MainAxisSizeDemoState extends State<MainAxisSizeDemo> {
-  final _sizes = [MainAxisSize.max, MainAxisSize.min];
+  final _sizes = MainAxisSize.values;
   int _sizeTypeIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          // mainAxisSize: MainAxisSize.max,
-          children: [
-            ...[0, 1].map((e) {
-              return TextButton(
-                child: Text(_sizes[e].toString()),
-                onPressed: () {
-                  setState(() {
-                    _sizeTypeIndex = e;
-                  });
-                },
-              );
-            }).toList(),
-          ],
-        ),
-        Row(
-          mainAxisSize: _sizes[_sizeTypeIndex],
-          children: _buildBoxList(),
-        ),
-      ],
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          Row(
+            // mainAxisSize: MainAxisSize.max,
+            children: [
+              ..._sizes.map((e) {
+                return TextButton(
+                  child: Text(e.toString()),
+                  onPressed: () {
+                    setState(() {
+                      _sizeTypeIndex = _sizes.indexOf(e);
+                    });
+                  },
+                );
+              }).toList(),
+            ],
+          ),
+          Row(
+            mainAxisSize: _sizes[_sizeTypeIndex],
+            children: buildBoxList(),
+          ),
+        ],
+      ),
     );
   }
-
-  List<BlueBox> _buildBoxList() =>
-      [1, 2, 3].map<BlueBox>((e) => const BlueBox()).toList();
 }

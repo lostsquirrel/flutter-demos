@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:layout_basics/main_axis_alignment_demo.dart';
+
+import 'cross_axis_alignment_demo.dart';
+import 'main_axis_size_demo.dart';
 
 class RouteItem {
   final String displayName;
@@ -12,7 +16,11 @@ class Home extends StatelessWidget {
   static const routeName = "/";
 
   final List<RouteItem> _routers = [
-    RouteItem('MainAxisSize', '/main-axis-size'),
+    RouteItem(MainAxisSizeDemo.displayName, MainAxisSizeDemo.routeName),
+    RouteItem(
+        MainAxisAlignmentDemo.displayName, MainAxisAlignmentDemo.routeName),
+    RouteItem(
+        CrossAxisAlignmentDemo.displayName, CrossAxisAlignmentDemo.routeName),
   ];
 
   List<TextButton> _buildRouters(BuildContext context) {
@@ -34,7 +42,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Row(children: _buildRouters(context)),
+        child: Column(children: _buildRouters(context)),
       ),
     );
   }
