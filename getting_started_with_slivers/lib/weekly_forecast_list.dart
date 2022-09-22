@@ -25,7 +25,7 @@ class WeeklyForecastList extends StatelessWidget {
               ),
               subtitle: Text(e.description),
               trailing: Text(
-                '$e.hightTemp | $e.lowTemp F',
+                '${e.highTemp} | ${e.lowTemp} F',
                 style: textTheme.subtitle2,
               ),
             ),
