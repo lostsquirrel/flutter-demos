@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_week/safe_area.dart';
 
 import 'expanded_demo.dart';
+import 'wrap_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,7 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
   static const items = {
+    "Wrap": WrapDemo(),
     "Expanded": ExpandedDemo(),
     "SafeArea": SafeAreaHome(),
   };

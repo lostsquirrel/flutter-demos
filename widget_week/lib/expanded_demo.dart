@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'common.dart';
+
 class ExpandedDemo extends StatelessWidget {
   const ExpandedDemo({super.key});
 
@@ -11,50 +13,30 @@ class ExpandedDemo extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: _buildItems(3),
+            children: buildDemoBoxes(3),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              ExpandedDemoItem(),
-              Expanded(child: ExpandedDemoItem()),
-              ExpandedDemoItem(),
+              DemoBox(),
+              Expanded(child: DemoBox()),
+              DemoBox(),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              ExpandedDemoItem(),
+              DemoBox(),
               Expanded(
                 flex: 2,
-                child: ExpandedDemoItem(),
+                child: DemoBox(),
               ),
-              ExpandedDemoItem(),
-              Expanded(child: ExpandedDemoItem()),
+              DemoBox(),
+              Expanded(child: DemoBox()),
             ],
           )
         ],
       ),
-    );
-  }
-}
-
-List<ExpandedDemoItem> _buildItems(int n) {
-  return List<int>.filled(n, 0)
-      .map<ExpandedDemoItem>((e) => const ExpandedDemoItem())
-      .toList();
-}
-
-class ExpandedDemoItem extends StatelessWidget {
-  const ExpandedDemoItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.all(10),
-      color: Colors.amber,
-      child: const Text(""),
     );
   }
 }
