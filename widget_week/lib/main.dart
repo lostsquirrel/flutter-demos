@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:widget_week/safe_area.dart';
 
 import 'animated_container_demo.dart';
+import 'buture_builder_demo.dart';
 import 'expanded_demo.dart';
 import 'opacity_demo.dart';
 import 'wrap_demo.dart';
@@ -28,6 +29,7 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
   static const items = {
+    "FutureBuilder": FutureBuilderDemo(),
     "Opacity": OpacityDemo(),
     "AnimatedContainer": AnimatedContainerDemo(),
     "Wrap": WrapDemo(),
