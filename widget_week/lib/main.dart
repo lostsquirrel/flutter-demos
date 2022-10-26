@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widget_week/fade_transition_demo.dart';
 import 'package:widget_week/safe_area.dart';
 
 import 'animated_container_demo.dart';
@@ -29,6 +30,7 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
   static const items = {
+    "FadeTransition": FadeTransitionDemo(),
     "FutureBuilder": FutureBuilderDemo(),
     "Opacity": OpacityDemo(),
     "AnimatedContainer": AnimatedContainerDemo(),
@@ -52,9 +54,10 @@ class MyHomePage extends StatelessWidget {
   }
 
   List<Widget> _buildIndexItem(BuildContext context) {
+    var serial = items.length;
     var list = items.entries.map<Widget>((entry) {
       return ElevatedButton(
-        child: Text(entry.key),
+        child: Text("${serial--} ${entry.key}"),
         onPressed: () {
           Navigator.push(
             context,

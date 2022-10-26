@@ -40,7 +40,7 @@ class FutureBuilderDemo extends StatelessWidget {
                 if (loadingProgress == null) return child;
                 return CircularProgressIndicator(
                   color: Colors.orangeAccent,
-                  value: loadingProgress!.expectedTotalBytes != null
+                  value: loadingProgress.expectedTotalBytes != null
                       ? loadingProgress.cumulativeBytesLoaded /
                           loadingProgress.expectedTotalBytes!.toInt()
                       : null,

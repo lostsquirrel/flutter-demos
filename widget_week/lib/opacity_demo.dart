@@ -32,7 +32,7 @@ class _OpacityDemoState extends State<OpacityDemo> {
   }
 
   void _changeOpacity(double? offset) {
-    print(offset);
+    // print(offset);
     if (offset != null) {
       var opacity = _opacity;
 

@@ -13,7 +13,7 @@ class _WrapDemoState extends State<WrapDemo> {
   Axis _direction = Axis.horizontal;
 
   void _toggleDirection() {
-    print("taped");
+    // print("taped");
     setState(() {
       if (_direction == Axis.horizontal) {
         _direction = Axis.vertical;

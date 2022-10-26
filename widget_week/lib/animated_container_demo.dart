@@ -34,7 +34,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 
   @override
   Widget build(BuildContext context) {
-    final _buttons = [
+    final buttons = [
       {"Color": _randomColor},
       {
         "linear": () => {
@@ -87,7 +87,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
           ),
           Expanded(
             child: Wrap(
-              children: _buttons
+              children: buttons
                   .map<ElevatedButton>((e) => ElevatedButton(
                       onPressed: e.values.first, child: Text(e.keys.first)))
                   .toList(),
