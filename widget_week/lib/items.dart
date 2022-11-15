@@ -7,9 +7,11 @@ import 'expanded_demo.dart';
 import 'floating_action_button_demo.dart';
 import 'opacity_demo.dart';
 import 'page_view_demo.dart';
+import 'table_demo.dart';
 import 'wrap_demo.dart';
 
 const items = {
+  "TableDemo": TableDemo(),
   "PageView": PageViewDemo(),
   "FloatingActionButton": FloatingActionButtonDemo(),
   "FadeTransition": FadeTransitionDemo(),
