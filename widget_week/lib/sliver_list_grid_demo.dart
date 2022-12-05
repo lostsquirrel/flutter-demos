@@ -7,10 +7,11 @@ class SliverListGridDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     var colorSet = [
       Colors.red,
-      Colors.orange,
       Colors.blue,
+      Colors.orange,
       Colors.green,
     ];
+    var colorIndex = 0;
     return Scaffold(
       appBar: AppBar(
         title: const Text("SliverList SliverGrid Demo"),
@@ -19,9 +20,9 @@ class SliverListGridDemo extends StatelessWidget {
         slivers: [
           SliverList(
             delegate: SliverChildListDelegate([
-              ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+              ...List<int>.filled(50, 0)
                   .map((e) => Container(
-                        color: colorSet[e % 3],
+                        color: colorSet[colorIndex++ % colorSet.length],
                         child: const Text("  x"),
                       ))
                   .toList()
@@ -32,7 +33,7 @@ class SliverListGridDemo extends StatelessWidget {
             children: [...List<int>.filled(50, 0)]
                 .map<Widget>(
                   (e) => Container(
-                    color: colorSet[e % 3],
+                    color: colorSet[colorIndex++ % colorSet.length],
                     child: const Text("  x"),
                   ),
                 )
