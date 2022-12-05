@@ -1,6 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+
+import 'common.dart';
 
 class AnimatedContainerDemo extends StatefulWidget {
   const AnimatedContainerDemo({super.key});
@@ -25,12 +25,12 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
     Curves.fastOutSlowIn,
     Curves.fastLinearToSlowEaseIn,
   ];
-  MaterialColor _color = _colors[_randomInt(_colors.length)];
-  Alignment _alignment = _alignments[_randomInt(_alignments.length)];
+  MaterialColor _color = _colors[randomInt(_colors.length)];
+  Alignment _alignment = _alignments[randomInt(_alignments.length)];
   Curve _curve = _curves[0];
-  Duration _duration = _randomDuration2();
-  double _width = 128;
-  double _height = 128;
+  final Duration _duration = randomDuration2();
+  final double _width = 128;
+  final double _height = 128;
 
   @override
   Widget build(BuildContext context) {
@@ -100,36 +100,8 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 
   void _randomColor() {
     setState(() => {
-          _alignment = _alignments[_randomInt(_alignments.length)],
-          _color = _colors[_randomInt(_colors.length)]
+          _alignment = _alignments[randomInt(_alignments.length)],
+          _color = _colors[randomInt(_colors.length)]
         });
   }
-
-  void _randomDuration() {
-    setState(() => {_duration = _randomDuration2()});
-  }
-
-  void _randomChange() {
-    setState(() {
-      _color = _colors[_randomInt(_colors.length)];
-
-      _curve = _curves[_randomInt(_curves.length)];
-      _duration = _randomDuration2();
-      _width = _randomDouble();
-      _height = _randomDouble();
-    });
-  }
-}
-
-Duration _randomDuration2() {
-  var rng = Random();
-  return Duration(microseconds: 500 + rng.nextInt(3000));
-}
-
-double _randomDouble() {
-  return Random().nextDouble() * 512 + 48;
-}
-
-int _randomInt(int max) {
-  return Random().nextInt(max);
 }

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class DemoBox extends StatelessWidget {
@@ -35,4 +37,17 @@ class MySizedBox extends StatelessWidget {
 
 List<DemoBox> buildDemoBoxes(int n) {
   return List<int>.filled(n, 0).map<DemoBox>((e) => const DemoBox()).toList();
+}
+
+Duration randomDuration2() {
+  var rng = Random();
+  return Duration(microseconds: 500 + rng.nextInt(3000));
+}
+
+double randomDouble() {
+  return Random().nextDouble() * 512 + 48;
+}
+
+int randomInt(int max) {
+  return Random().nextInt(max);
 }

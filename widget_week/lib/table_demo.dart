@@ -29,7 +29,7 @@ class _TableDemoState extends State<TableDemo> {
           textBaseline: TextBaseline.ideographic,
           defaultVerticalAlignment: verticalAlign,
           defaultColumnWidth: columnWidth,
-          columnWidths: {
+          columnWidths: const {
             1: FixedColumnWidth(150)
           },
           children: [

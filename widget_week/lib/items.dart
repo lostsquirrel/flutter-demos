@@ -8,10 +8,12 @@ import 'floating_action_button_demo.dart';
 import 'opacity_demo.dart';
 import 'page_view_demo.dart';
 import 'sliver_app_bar.dart';
+import 'sliver_list_grid_demo.dart';
 import 'table_demo.dart';
 import 'wrap_demo.dart';
 
 const items = {
+  "SliverListGridDemo": SliverListGridDemo(),
   "SliverAppBar": SliverAppBarDemo(),
   "Table": TableDemo(),
   "PageView": PageViewDemo(),
