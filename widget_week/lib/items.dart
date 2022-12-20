@@ -1,4 +1,5 @@
 import 'fade_transition_demo.dart';
+import 'fadein_image.dart';
 import 'safe_area.dart';
 
 import 'animated_container_demo.dart';
@@ -13,6 +14,7 @@ import 'table_demo.dart';
 import 'wrap_demo.dart';
 
 const items = {
+  "FadeInImageDemo": FadeInImageDemo(),
   "SliverListGridDemo": SliverListGridDemo(),
   "SliverAppBar": SliverAppBarDemo(),
   "Table": TableDemo(),
